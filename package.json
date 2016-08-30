@@ -1,0 +1,26 @@
+{
+  "name": "serverless-chatbot",
+  "version": "1.0.0",
+  "description": "a chatbot on AWS Lambda and Amazon API Gateway",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glifchits/serverless-chatbot.git"
+  },
+  "keywords": [
+    "serverless",
+    "chatbot"
+  ],
+  "author": "George Lifchits (george.lifchits@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glifchits/serverless-chatbot/issues"
+  },
+  "homepage": "https://github.com/glifchits/serverless-chatbot#readme",
+  "dependencies": {
+    "nlp_compromise": "^6.5.0"
+  }
+}
