@@ -5,7 +5,7 @@
 1) Clone this repo
 ```
 cd ~
-git clone git@github.com:Saasli/saasli-backend.git
+git clone git@github.com:glifchits/serverless-chatbot.git
 ```
 
 2) Get yourself the latest serverless from npm
