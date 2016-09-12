@@ -9,7 +9,7 @@ var params = { TableName: 'users', Key : { id : null}};
 
 
 
-module.exports.main = function(event, context, cb){
+module.exports.auth = function(event, context, cb){
 	fs.readFile('auth.html', function processAuthHTML(err, html) {
 		if (err) {
 			console.log('Error loading static auth HTML: ' + err);
@@ -18,3 +18,8 @@ module.exports.main = function(event, context, cb){
 		cb(null, html.toString());
 	});
 };
+
+
+module.exports.authstore = function(event, context, cb){
+	console.log(event.body);
+}
