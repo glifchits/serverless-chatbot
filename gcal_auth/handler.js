@@ -1,3 +1,7 @@
+//gapi stuff
+var google = require('googleapis');
+var OAuth2 = google.auth.OAuth2;
+var oauth2Client = new OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
 //file stuff
 var fs = require('fs');
 var readline = require('readline');
@@ -20,6 +24,16 @@ module.exports.auth = function(event, context, cb){
 };
 
 
+//This endpoint gets hit once the user grants offline permissions
+// with a code that we can exchange for our very own auth token.
 module.exports.authstore = function(event, context, cb){
-	console.log(event.body);
+	console.log('code: ', event.body.code);
+	oauth2Client.getToken(event.body.code, function(err, tokens) {
+		console.log('tokens: ', tokens);
+		if(!err) {
+			oauth2Client.setCredentials(tokens);
+			cb(null, {'message' : 'Success: Got Token'});
+		}
+		cb(null, {'error' : 'no token'});
+	});
 }
