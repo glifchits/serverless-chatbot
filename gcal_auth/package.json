@@ -16,5 +16,7 @@
     "url": "https://github.com/glifchits/serverless-chatbot/issues"
   },
   "homepage": "https://github.com/glifchits/serverless-chatbot#readme",
-  "dependencies": {}
+  "dependencies": {
+    "googleapis": "^12.4.0"
+  }
 }
