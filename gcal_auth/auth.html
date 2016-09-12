@@ -37,12 +37,14 @@
             $.ajax({
               type: 'POST',
               url: 'https://wbac1byht4.execute-api.us-east-1.amazonaws.com/dev/authstore', //TODO: Figure out how to not have to hardcode this
-              contentType: 'application/octet-stream; charset=utf-8',
+              contentType: 'application/json; charset=utf-8',
               success: function(result) {
-                // Handle or verify the server response.
+                $('#authorize-div').html(
+                  '<span>Done</span>'
+                );
               },
               processData: false,
-              data: authResult['code']
+              data: JSON.stringify({'code' : authResult['code']})
             });
           } else {
             // There was an error.
