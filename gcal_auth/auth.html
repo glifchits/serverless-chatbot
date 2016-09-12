@@ -8,7 +8,6 @@
     <script>
       function start() {
         gapi.load('auth2', function() {
-          console.log('auth2 here?');
           auth2 = gapi.auth2.init({
             client_id: '1095735522611-8gc0hnltpu78vbj27dh766i79lip37tk.apps.googleusercontent.com',
             // Scopes to request in addition to 'profile' and 'email'
@@ -24,7 +23,6 @@
       <button id="signinButton">Sign in with Google</button>
       <script>
         $('#signinButton').click(function() {
-          console.log('click here?');
           // signInCallback defined in step 6.
           auth2.grantOfflineAccess({'redirect_uri': 'postmessage'}).then(signInCallback);
         });
@@ -33,8 +31,6 @@
         function signInCallback(authResult) {
           if (authResult['code']) {
 
-            // Hide the sign-in button now that the user is authorized, for example:
-            console.log('callback here?');
             $('#signinButton').attr('style', 'display: none');
 
             // Send the code to the server
